@@ -189,21 +189,21 @@ const shuffleArray = (arr) => {
     return arr;
 };
 
-urls = {
-    'aptitude': '../mocks/aptitude.json',
-    'cricket': '../mocks/cricket-data.json',
-    'current-affairs': '../mocks/current-affairs.json',
-    'english': '../mocks/english.json',
-    'general-knowledge': '../mocks/general-knowledge.json',
-    'geography': '../mocks/geography.json',
-    'history': '../mocks/history.json',
-    'html': '../mocks/html-css-data.json',
-    'javascript': '../mocks/javascript-data.json',
-    'react': '../mocks/react-data.json',
-    'reasoning': '../mocks/reasoning.json',
-    'science': '../mocks/science.json',
-    'sports': '../mocks/sports.json',
-};
+const urls = {
+        'aptitude': '../mocks/aptitude.json',
+        'cricket': '../mocks/cricket-data.json',
+        'current-affairs': '../mocks/current-affairs.json',
+        'english': '../mocks/english.json',
+        'general-knowledge': '../mocks/general-knowledge.json',
+        'geography': '../mocks/geography.json',
+        'history': '../mocks/history.json',
+        'html': '../mocks/html-css-data.json',
+        'javascript': '../mocks/javascript-data.json',
+        'react': '../mocks/react-data.json',
+        'reasoning': '../mocks/reasoning.json',
+        'science': '../mocks/science.json',
+        'sports': '../mocks/sports.json',
+    };
 
 const setQuizUI = (ques) => {
     currentQuestion = ques;
@@ -352,22 +352,9 @@ function uniqueArray(array) {
     return [...new Map(array.map((item) => [item.correct_answer, item])).values()];
 }
 
+
 async function logAllResultsLength() {
-    const urls = {
-        'aptitude': '../mocks/aptitude.json',
-        'cricket': '../mocks/cricket-data.json',
-        'current-affairs': '../mocks/current-affairs.json',
-        'english': '../mocks/english.json',
-        'general-knowledge': '../mocks/general-knowledge.json',
-        'geography': '../mocks/geography.json',
-        'history': '../mocks/history.json',
-        'html': '../mocks/html-css-data.json',
-        'javascript': '../mocks/javascript-data.json',
-        'react': '../mocks/react-data.json',
-        'reasoning': '../mocks/reasoning.json',
-        'science': '../mocks/science.json',
-        'sports': '../mocks/sports.json',
-    };
+    
     for (const [key, path] of Object.entries(urls)) {
         try {
             const res = await fetch(path);
