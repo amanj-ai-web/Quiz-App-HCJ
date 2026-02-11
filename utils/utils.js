@@ -5,7 +5,7 @@ let timeLeft = 0;
 let timerValue = 0;
 
 function loadNavbar(selector = "#navbar") {
-  fetch("../components/navbar.html")
+  fetch("components/navbar.html")
     .then((res) => res.text())
     .then((data) => {
       document.querySelector(selector).innerHTML = data;
@@ -82,7 +82,7 @@ function loadQuizReview() {
     ` ${currentUser.questions.length} Questions`;
   const accuracy = (currentUser.score * 100) / currentUser.questions.length;
   document.getElementById("testName").textContent =
-    `${currentUser.questions[0].category} Test Review`;
+    `${currentUser.questions[0]?.category} Test Review`;
   document.getElementById("accuracy").textContent = `${accuracy}%`;
   document.getElementById("award").textContent = getGrade(accuracy);
   document.getElementById("answered").textContent =
@@ -221,19 +221,19 @@ const shuffleArray = (arr) => {
 };
 
 const urls = {
-  aptitude: "../mocks/aptitude.json",
-  cricket: "../mocks/cricket-data.json",
-  "current-affairs": "../mocks/current-affairs.json",
-  english: "../mocks/english.json",
-  "general-knowledge": "../mocks/general-knowledge.json",
-  geography: "../mocks/geography.json",
-  history: "../mocks/history.json",
-  html: "../mocks/html-css-data.json",
-  javascript: "../mocks/javascript-data.json",
-  react: "../mocks/react-data.json",
-  reasoning: "../mocks/reasoning.json",
-  science: "../mocks/science.json",
-  sports: "../mocks/sports.json",
+  aptitude: "./mocks/aptitude.json",
+  cricket: "./mocks/cricket-data.json",
+  "current-affairs": "./mocks/current-affairs.json",
+  english: "./mocks/english.json",
+  "general-knowledge": "./mocks/general-knowledge.json",
+  geography: "./mocks/geography.json",
+  history: "./mocks/history.json",
+  html: "./mocks/html-css-data.json",
+  javascript: "./mocks/javascript-data.json",
+  react: "./mocks/react-data.json",
+  reasoning: "./mocks/reasoning.json",
+  science: "./mocks/science.json",
+  sports: "./mocks/sports.json",
 };
 
 const setQuizUI = (ques) => {
